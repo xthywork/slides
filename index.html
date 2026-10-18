@@ -62,6 +62,7 @@ SOFTWARE.
 <script>
 (() => {
  'use strict';
+ if(location.search)history.replaceState(null,'',location.pathname+location.hash);
  const $=id=>document.getElementById(id),scenes=JSON.parse($('scene-data').textContent),frame=$('service-interface');
  let index=0,ready=false,toastTimer=null,sceneSerial=0;
  const report={errors:[],requests:[],sourceRevision:'8ffebf6'};
