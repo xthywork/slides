@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "presentations": [
+    {
+      "id": "service-harbor",
+      "title": "Service Harbor",
+      "subtitle": "用圖像，認識服務管理",
+      "description": "從查看狀態、啟停服務到遠端主機管理，用圖像動畫帶新手看懂每個功能，也能切換原版介面實際操作。",
+      "category": "工具介紹",
+      "tags": [
+        "圖像動畫",
+        "互動展示",
+        "Linux"
+      ],
+      "slides": 13,
+      "updated": "2026-10-25",
+      "status": "已完成",
+      "path": "presentations/service-harbor/",
+      "notes": "presentations/service-harbor/notes.html",
+      "cover": "assets/service-harbor.svg"
+    }
+  ]
+}

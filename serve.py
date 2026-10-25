@@ -1,43 +1,18 @@
 #!/usr/bin/env python3
-"""Serve the final presentation and short speaker notes with clean URLs."""
-from html import escape
+"""Serve the presentation hub locally using only the Python standard library."""
+import argparse
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
+import mimetypes
 
 ROOT = Path(__file__).resolve().parent
-
-
-def notes_page():
-    blocks = []
-    for paragraph in (ROOT / 'speaker-notes.md').read_text(encoding='utf-8').split('\n\n'):
-        paragraph = paragraph.strip()
-        if not paragraph:
-            continue
-        if paragraph.startswith('## '):
-            blocks.append('<h2>' + escape(paragraph[3:]) + '</h2>')
-        elif paragraph.startswith('# '):
-            blocks.append('<h1>' + escape(paragraph[2:]) + '</h1>')
-        else:
-            blocks.append('<p>' + escape(paragraph) + '</p>')
-    return '''<!doctype html><html lang="zh-Hant"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Service Harbor｜簡易摘要講稿</title>
-<style>
-*{box-sizing:border-box}body{margin:0;background:#f4f6f8;color:#17212b;
-font:17px/1.95 "Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif}
-main{max-width:850px;margin:40px auto;padding:36px 42px;background:white;
-border:1px solid #dce4e8;border-radius:12px}a{color:#168773;text-decoration:none}
-nav{display:flex;flex-wrap:wrap;gap:24px;font-size:14px;padding-bottom:20px;
-border-bottom:1px solid #dce4e8}h1{font-size:30px;line-height:1.5;margin:28px 0}
-h2{font-size:20px;margin:30px 0 9px;color:#168773;line-height:1.6}
-p{margin:0 0 18px}a:focus-visible{outline:3px solid #168773;outline-offset:4px}
-@media(max-width:600px){main{margin:0;padding:24px;border:0;border-radius:0}
-h1{font-size:26px}body{font-size:16px}}
-@media print{body{background:white;font-size:12pt}main{border:0;margin:0;padding:0}
-nav{display:none}h2{break-after:avoid}p{orphans:3;widows:3}}
-</style><main><nav><a href="/" target="_blank" rel="noopener">開啟最新版簡報 ↗</a>
-<a href="/speaker-notes.md">純文字講稿</a></nav>''' + ''.join(blocks) + '</main></html>'
+LEGACY = {'/notes': '/presentations/service-harbor/notes.html',
+          '/speaker-notes.md': '/presentations/service-harbor/speaker-notes.md',
+          '/index.html': '/'}
+TYPES = {'.html': 'text/html; charset=utf-8', '.json': 'application/json; charset=utf-8',
+         '.svg': 'image/svg+xml; charset=utf-8', '.md': 'text/plain; charset=utf-8',
+         '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8'}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -56,19 +31,33 @@ class Handler(BaseHTTPRequestHandler):
         url = urlsplit(self.path)
         if url.query:
             return self.send_content(302, location=url.path or '/')
-        if url.path == '/index.html':
-            return self.send_content(302, location='/')
-        if url.path == '/':
-            return self.send_content(200, (ROOT / 'index.html').read_bytes())
-        if url.path == '/notes':
-            return self.send_content(200, notes_page().encode('utf-8'))
-        if url.path == '/speaker-notes.md':
-            return self.send_content(200, (ROOT / 'speaker-notes.md').read_bytes(),
-                                     'text/plain; charset=utf-8')
-        self.send_content(404, '找不到這個頁面。'.encode('utf-8'))
+        if url.path in LEGACY:
+            return self.send_content(302, location=LEGACY[url.path])
+        path = unquote(url.path)
+        parts = Path(path).parts
+        if any(part.startswith('.') for part in parts if part != '/'):
+            return self.send_content(404, '找不到這個頁面。'.encode())
+        target = (ROOT / path.lstrip('/')).resolve()
+        if not target.is_relative_to(ROOT):
+            return self.send_content(404)
+        allowed = path == '/' or path == '/presentations.json' or path.startswith(('/presentations/', '/assets/'))
+        if not allowed:
+            return self.send_content(404, '找不到這個頁面。'.encode())
+        if target.is_dir():
+            if not path.endswith('/'):
+                return self.send_content(302, location=url.path + '/')
+            target = target / 'index.html'
+        if not target.is_file():
+            return self.send_content(404, '找不到這個頁面。'.encode())
+        return self.send_content(200, target.read_bytes(), TYPES.get(target.suffix, mimetypes.guess_type(target.name)[0] or 'application/octet-stream'))
 
     do_HEAD = do_GET
 
 
 if __name__ == '__main__':
-    ThreadingHTTPServer(('0.0.0.0', 49183), Handler).serve_forever()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--host', default='0.0.0.0')
+    parser.add_argument('--port', type=int, default=49183)
+    args = parser.parse_args()
+    print(f'Presentation hub serving on {args.host}:{args.port}', flush=True)
+    ThreadingHTTPServer((args.host, args.port), Handler).serve_forever()
