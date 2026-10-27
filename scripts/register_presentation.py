@@ -19,6 +19,7 @@ def main():
     parser.add_argument('--description', required=True)
     parser.add_argument('--category', default='主題介紹')
     parser.add_argument('--slides', type=int, required=True)
+    parser.add_argument('--unit', choices=['頁', '章'], default='頁', help='Display unit for slides or scrolling chapters.')
     parser.add_argument('--tags', nargs='*', default=['圖像動畫'])
     args = parser.parse_args()
     if not re.fullmatch(r'[a-z0-9]+(?:-[a-z0-9]+)*', args.id) or args.slides < 1:
@@ -32,6 +33,8 @@ def main():
              'description': args.description, 'category': args.category, 'tags': args.tags,
              'slides': args.slides, 'updated': date.today().isoformat(), 'status': '已完成',
              'path': f'presentations/{args.id}/', 'cover': f'assets/{args.id}.svg'}
+    if args.unit != '頁':
+        entry['unit'] = args.unit
     notes = folder / 'speaker-notes.md'
     if notes.is_file():
         render(notes, folder / 'notes.html')

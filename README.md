@@ -2,8 +2,8 @@
 
 集中瀏覽圖像動畫簡報、互動展示與摘要講稿的個人入口。使用原生 HTML／CSS／JavaScript，無須安裝前端套件或編譯框架。
 
-- 公開入口：https://xthybot.github.io/presentation-hub/
-- 原始碼：https://github.com/xthybot/presentation-hub
+- 公開入口：https://slides.xthy.work/
+- 原始碼：https://github.com/xthywork/slides
 
 ## 日常使用
 
@@ -16,6 +16,7 @@
 | 簡報 | 內容 | 頁數 |
 | --- | --- | --- |
 | [Service Harbor](presentations/service-harbor/) | 服務管理的圖像動畫、原版前端展示與摘要講稿 | 13 |
+| [Fork Quest](presentations/fork-quest/) | Codex Fork、Git 分支、Worktree 與 GitHub 協作的互動課程 | 6 章 |
 
 Service Harbor 的主機、服務與日誌使用虛構資料；介面不會連接正式系統。
 
@@ -67,6 +68,8 @@ python3 scripts/register_presentation.py \
   --slides 10 \
   --tags '圖像動畫' '新手入門'
 ```
+
+捲動式課程可加上 `--unit 章`，並以章節數填入 `--slides`；省略時以頁數顯示。
 
 此命令會新增或更新 `presentations.json`、在有 Markdown 講稿時產生 `notes.html`，並在封面不存在時建立 SVG 封面。已有精心設計的封面不會被覆蓋。入口會自動讀取清單中的新項目，無須修改首頁。
 

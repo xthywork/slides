@@ -18,6 +18,26 @@
       "path": "presentations/service-harbor/",
       "notes": "presentations/service-harbor/notes.html",
       "cover": "assets/service-harbor.svg"
+    },
+    {
+      "id": "fork-quest",
+      "title": "Fork Quest",
+      "subtitle": "Codex × Git 互動學院",
+      "description": "六章互動圖解，分清 Codex 對話分岔、Git 分支、Worktree 與 GitHub Fork，實際走過提交、推送與 PR 協作流程。",
+      "category": "互動教學",
+      "tags": [
+        "Codex",
+        "Git",
+        "Worktree",
+        "新手入門"
+      ],
+      "slides": 6,
+      "updated": "2026-10-27",
+      "status": "已完成",
+      "path": "presentations/fork-quest/",
+      "cover": "assets/fork-quest.svg",
+      "unit": "章",
+      "notes": "presentations/fork-quest/notes.html"
     }
   ]
 }
