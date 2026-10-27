@@ -58,6 +58,26 @@
       "cover": "assets/ai-agent-guide.svg",
       "notes": "presentations/ai-agent-guide/notes.html",
       "unit": "章"
+    },
+    {
+      "id": "rag-to-wiki",
+      "title": "從 RAG 到 LLM Wiki",
+      "subtitle": "資料明明在，為什麼 AI 找不到？",
+      "description": "16 章新手圖解，拆解大型資料庫的搜尋瓶頸，說明 LLM Wiki 如何預先整理主題、串接來源，以及仍需面對的限制。附情境互動與摘要講稿。",
+      "category": "互動教學",
+      "tags": [
+        "RAG",
+        "LLM Wiki",
+        "知識管理",
+        "圖像解說"
+      ],
+      "slides": 16,
+      "updated": "2026-10-27",
+      "status": "已完成",
+      "path": "presentations/rag-to-wiki/",
+      "cover": "assets/rag-to-wiki.svg",
+      "unit": "章",
+      "notes": "presentations/rag-to-wiki/notes.html"
     }
   ]
 }
