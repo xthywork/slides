@@ -18,7 +18,7 @@
 | [Service Harbor](presentations/service-harbor/) | 服務管理的圖像動畫、原版前端展示與摘要講稿 | 13 |
 | [Fork Quest](presentations/fork-quest/) | Codex Fork、Git 分支、Worktree 與 GitHub 協作的互動課程 | 6 章 |
 | [AI Agent 入門](presentations/ai-agent-guide/) | 適合報告的 20 章 AI 圖解，介紹記憶、RAG、研究查核與交接，附延伸練習及範本 | 20 章 |
-| [從 RAG 到 LLM Wiki](presentations/rag-to-wiki/) | 6 頁、5 分鐘圖解前 N 筆漏檢與 Wiki 概念摘要，附排序互動及講稿 | 6 |
+| [從 RAG 到 LLM Wiki](presentations/rag-to-wiki/) | 同一個延期問題貫穿 6 頁，從漏掉前因到整理概念，附 5 分鐘講稿 | 6 |
 
 Service Harbor 的主機、服務與日誌使用虛構資料；介面不會連接正式系統。
 
