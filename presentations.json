@@ -56,7 +56,8 @@
       "status": "已完成",
       "path": "presentations/ai-agent-guide/",
       "cover": "assets/ai-agent-guide.svg",
-      "notes": "presentations/ai-agent-guide/notes.html"
+      "notes": "presentations/ai-agent-guide/notes.html",
+      "unit": "章"
     }
   ]
 }
