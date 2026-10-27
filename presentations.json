@@ -38,6 +38,25 @@
       "cover": "assets/fork-quest.svg",
       "unit": "章",
       "notes": "presentations/fork-quest/notes.html"
+    },
+    {
+      "id": "ai-agent-guide",
+      "title": "AI Agent 入門",
+      "subtitle": "把 AI 變成能接力的工作助理",
+      "description": "以整理研究資料為故事，透過工作桌圖解、記憶分類、RAG 搜尋與引用查核，帶新手理解 AI 如何做事、保存知識並交接。附完整研究範本。",
+      "category": "互動教學",
+      "tags": [
+        "AI Agent",
+        "記憶與 RAG",
+        "研究查核",
+        "新手入門"
+      ],
+      "slides": 20,
+      "updated": "2026-10-27",
+      "status": "已完成",
+      "path": "presentations/ai-agent-guide/",
+      "cover": "assets/ai-agent-guide.svg",
+      "notes": "presentations/ai-agent-guide/notes.html"
     }
   ]
 }

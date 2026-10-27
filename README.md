@@ -17,6 +17,7 @@
 | --- | --- | --- |
 | [Service Harbor](presentations/service-harbor/) | 服務管理的圖像動畫、原版前端展示與摘要講稿 | 13 |
 | [Fork Quest](presentations/fork-quest/) | Codex Fork、Git 分支、Worktree 與 GitHub 協作的互動課程 | 6 章 |
+| [AI Agent 入門](presentations/ai-agent-guide/) | 給初學者的工作桌圖解、記憶分類、RAG 與研究查核，附可下載範本 | 20 |
 
 Service Harbor 的主機、服務與日誌使用虛構資料；介面不會連接正式系統。
 
