@@ -61,17 +61,17 @@
     },
     {
       "id": "rag-to-wiki",
-      "title": "從 RAG 到 LLM Wiki",
-      "subtitle": "一個延期問題，5 分鐘講懂差別",
-      "description": "用同一個問題與 A／B／C 三份記錄貫穿 6 頁：看 RAG 如何漏掉前因，再看 Wiki 如何預先整理概念，補上答案的脈絡。附 5 分鐘講稿。",
-      "category": "互動教學",
+      "title": "為什麼大量資料會讓 RAG 找不到正確答案？",
+      "subtitle": "從 Top-K 檢索限制到 LLMWiki 知識管理架構",
+      "description": "12 頁技術簡報：用訂單 API 逾時與 CHG-2841 案例，說明 Top-5 如何漏掉根因，以及 LLMWiki 如何透過預先整理知識關聯降低漏答風險。",
+      "category": "技術報告",
       "tags": [
         "RAG",
-        "LLM Wiki",
-        "5 分鐘",
-        "圖像解說"
+        "LLMWiki",
+        "Top-K",
+        "故障分析"
       ],
-      "slides": 6,
+      "slides": 12,
       "updated": "2026-10-27",
       "status": "已完成",
       "path": "presentations/rag-to-wiki/",
