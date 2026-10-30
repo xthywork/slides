@@ -19,6 +19,7 @@
 | [Fork Quest](presentations/fork-quest/) | Codex Fork、Git 分支、Worktree 與 GitHub 協作的互動課程 | 6 章 |
 | [AI Agent 入門](presentations/ai-agent-guide/) | 適合報告的 20 章 AI 圖解，介紹記憶、RAG、研究查核與交接，附延伸練習及範本 | 20 章 |
 | [為什麼大量資料會讓 RAG 找不到正確答案？](presentations/rag-to-wiki/) | 以訂單 API 逾時與 CHG-2841 案例，介紹 Top-K 限制、LLMWiki 知識整合及適用前提 | 12 |
+| [Grok Bot：Agent 團隊架構](presentations/grok-bot-agent-architecture/) | 固定滿版流程圖，說明三層責任、主管分工、資料交接與成果驗收 | 12 |
 
 Service Harbor 的主機、服務與日誌使用虛構資料；介面不會連接正式系統。
 

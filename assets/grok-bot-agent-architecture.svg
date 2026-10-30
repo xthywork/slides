@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" role="img" aria-labelledby="title desc">
+  <title id="title">Grok Bot：Agent 團隊架構</title>
+  <desc id="desc">人定目標，Gummy 統籌後分派給信件、專案與行銷角色，再由執行者交付並回報。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#6e8565"/></marker></defs>
+  <rect width="900" height="600" fill="#f6f5ef"/>
+  <g font-family="system-ui,'Microsoft JhengHei',sans-serif" fill="#202b27">
+    <text x="64" y="67" font-size="15" letter-spacing="3" fill="#355a41">AGENT ARCHITECTURE / 12 頁流程圖</text>
+    <text x="62" y="139" font-size="52" font-weight="700">Grok Bot</text>
+    <text x="62" y="194" font-size="36" font-weight="650">把 AI 團隊的責任接起來</text>
+    <g fill="none" stroke="#6e8565" stroke-width="2.5" marker-end="url(#arrow)">
+      <path d="M169 342H304"/><path d="M421 342H476V269H552"/>
+      <path d="M476 342H552"/><path d="M476 342V415H552"/>
+      <path d="M683 269H741V342H775"/><path d="M683 342H775"/><path d="M683 415H741V342H775"/>
+      <path d="M811 383V500H127V389" stroke-dasharray="8 7"/>
+    </g>
+    <circle cx="127" cy="342" r="42" fill="#fffefa" stroke="#adbea2" stroke-width="2"/>
+    <text x="127" y="350" text-anchor="middle" font-size="23">你</text>
+    <rect x="305" y="306" width="116" height="72" rx="36" fill="#202b27"/>
+    <text x="363" y="350" text-anchor="middle" font-size="23" fill="#d1ecb7">Gummy</text>
+    <g fill="#d1ecb7" stroke="#adbea2" stroke-width="1.5">
+      <rect x="552" y="240" width="132" height="58" rx="29"/>
+      <rect x="552" y="313" width="132" height="58" rx="29"/>
+      <rect x="552" y="386" width="132" height="58" rx="29"/>
+    </g>
+    <g text-anchor="middle" font-size="21"><text x="618" y="277">信件</text><text x="618" y="350">專案</text><text x="618" y="423">行銷</text></g>
+    <circle cx="811" cy="342" r="36" fill="#d1ecb7" stroke="#adbea2" stroke-width="2"/>
+    <text x="811" y="349" text-anchor="middle" font-size="18">執行</text>
+    <text x="448" y="491" text-anchor="middle" font-size="17" fill="#355a41">目標 → 分派 → 產物 → 驗收</text>
+    <text x="64" y="561" font-size="16" fill="#68716a">選編自傑少 JAY 的影片 · 原創圖解 / 非官方系統規格</text>
+  </g>
+</svg>

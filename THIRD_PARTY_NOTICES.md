@@ -1,5 +1,13 @@
 # 第三方內容與授權
 
+## Grok Bot：Agent 團隊架構
+
+此簡報依傑少 JAY 於 2026-10-29 發布的影片選編，以原創文字與 SVG 流程圖說明。不是官方系統規格，也不代表原作者。未重新分發原始影片、完整逐字字幕、服務登入資料或授權畫面；原片及官方參考來源見簡報內的 `sources.md`。
+
+https://www.youtube.com/watch?v=7c1S6DGsL_k
+
+## Service Harbor
+
 Service Harbor 簡報內嵌 xthybot/service-harbor 的前端 HTML、CSS 與 JavaScript，來源版本為 `8ffebf6`。展示資料層與圖像簡報另外製作，沒有執行正式後端。
 
 原始專案：https://github.com/xthybot/service-harbor

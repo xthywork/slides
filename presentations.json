@@ -77,6 +77,25 @@
       "path": "presentations/rag-to-wiki/",
       "cover": "assets/rag-to-wiki.svg",
       "notes": "presentations/rag-to-wiki/notes.html"
+    },
+    {
+      "id": "grok-bot-agent-architecture",
+      "title": "Grok Bot：Agent 團隊架構",
+      "subtitle": "12 頁流程圖，看懂責任分層與工作接力",
+      "description": "人定目標、Gummy 統籌、主管分工、執行者交成果；用決策分支、資料交接與回報迴圈，理解 Agent 團隊架構。固定滿版、不捲動，附講稿與 PDF。",
+      "category": "技術報告",
+      "tags": [
+        "AI Agent",
+        "Grok Bot",
+        "流程圖",
+        "團隊協作"
+      ],
+      "slides": 12,
+      "updated": "2026-10-30",
+      "status": "已完成",
+      "path": "presentations/grok-bot-agent-architecture/",
+      "cover": "assets/grok-bot-agent-architecture.svg",
+      "notes": "presentations/grok-bot-agent-architecture/notes.html"
     }
   ]
 }
